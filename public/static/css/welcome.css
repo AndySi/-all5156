@@ -1,23 +1,23 @@
 @font-face {
-	font-family: xet;
-	src: url('../fonts/xet.ttf') format('truetype');
+    font-family: xet;
+    src: url('../fonts/xet.ttf') format('truetype');
 }
 
 html,
 body {
-	height: 100%;
+    height: 100%;
 }
 
 body {
-	-moz-user-select: none;
-	/*火狐*/
-	-webkit-user-select: none;
-	/*webkit浏览器*/
-	-ms-user-select: none;
-	/*IE10*/
-	-khtml-user-select: none;
-	/*早期浏览器*/
-	user-select: none;
+    -moz-user-select: none;
+    /*火狐*/
+    -webkit-user-select: none;
+    /*webkit浏览器*/
+    -ms-user-select: none;
+    /*IE10*/
+    -khtml-user-select: none;
+    /*早期浏览器*/
+    user-select: none;
 }
 
 body,
@@ -38,143 +38,166 @@ form,
 a,
 p,
 textarea {
-	display: block;
-	margin: 0;
-	padding: 0;
-	font-family: "微软雅黑";
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
 }
 
 ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+    max-width: 100%;
+    height: auto;
 }
-
 
 /*清除浮动*/
 
 .clearfloat {
-	zoom: 1;
+    zoom: 1;
 }
 
 .clearfloat:after {
-	display: block;
-	clear: both;
-	content: "";
-	visibility: hidden;
-	height: 0;
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
 }
 
 .clearfix {
-	clear: both;
+    clear: both;
 }
-
 
 /** 欢迎  **/
 
 .asg-container .page-home {
-	background: url(../images/hero-bg-03.jpg) center top;
-	background-size: cover !important;
-	background-attachment: fixed !important;
-	position: relative;
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
-	display: table;
-	z-index: 10;
-	padding: 0;
-	background-position: 50% 0px;
+    background: url(../images/hero-bg-03.jpg) center top;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: table;
+    z-index: 10;
+    padding: 0;
+    background-position: 50% 0px;
 }
 
 .page-home .home-text-wrapper {
-	display: table-cell;
-	vertical-align: middle;
-	margin: auto;
-	width: 100%;
-	background: url(../images/pattern.png);
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+    width: 100%;
+    background: url(../images/pattern.png);
 }
 
 a.a-down {
-	color: #fff;
-	position: absolute;
-	bottom: 60px;
-	left: 50%;
-	margin-left: -10px;
+    color: #fff;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    margin-left: -10px;
 }
 
 .animate-bounce-down {
-	-webkit-animation: bounce-down 1s linear infinite;
-	animation: bounce-down 1s linear infinite;
+    -webkit-animation: bounce-down 1s linear infinite;
+    animation: bounce-down 1s linear infinite;
 }
 
 .home-text-wrapper .home-logo {
-	margin: 30px 0 100px;
-	position: relative;
-	display: block;
-	text-align: center;
-	width: 100%;
-	color: #000;
+    margin: 30px 0 100px;
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: #000;
 }
 
-
 /** 菜单 **/
-.page-nav img{
-	height: 60px;
+.page-nav img {
+    height: 60px;
 }
 
 .main-menu-wrapper {
-	height: 100px;
+    height: 100px;
 }
 
 .page-nav {
-	height: 80px;
-	background-color: #1d2024;
-	color: #FFF;
-	position: relative;
-	top: 0;
-	width: 100%;
-	z-index: 10000;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+    height: 80px;
+    background-color: #1d2024;
+    color: #FFF;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .nav-fixed {
-	position: fixed;
-	top: 0;
+    position: fixed;
+    top: 0;
 }
-
 
 /** 关于 **/
 
 .page-about {
-	position: relative;
-	padding: 80px 0 60px;
-	box-sizing: border-box;
-	width: 100%;
+    position: relative;
+    padding: 80px 0 60px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .page-about .about-title {
-	text-align: center;
+    text-align: center;
 }
 
 .page-about .about-title h1 {
-	box-shadow: 0 0 0 3px #1C1F26;
-	border: 1px #fff solid;
-	font-size: 46px;
-	padding: 10px 30px;
-	text-align: center;
-	display: inline-block;
-	color: #fff;
-	font-family: xet;
-	background: #1C1F26;
+    box-shadow: 0 0 0 3px #1C1F26;
+    border: 1px #fff solid;
+    font-size: 46px;
+    padding: 10px 30px;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    font-family: xet;
+    background: #1C1F26;
+}
+
+
+
+
+.about-area span,
+.about-area .section-title p,
+.skill-section .section-title p,
+.blog-area .section-title p,
+.resome-area .section-title p {
+    font-family: xet;
+    font-size: 18px;
+}
+
+.img-user {
+    height: 400px;
+    width: 400px;
+}
+
+.education-details .icon i.iconfont, .working-details .icon i.iconfont {
+    transform: rotate(-135deg);
+    -ms-transform:rotate(-135deg); 	/* IE 9 */
+    -moz-transform:rotate(-135deg); 	/* Firefox */
+    -webkit-transform:rotate(-135deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-135deg); 	/* Opera */
+    text-align: center;
+    line-height: 40px;
 }

@@ -439,6 +439,7 @@ a {
   background-size: cover; }
 
 .scroll-down {
+  text-align: center;
   display: inline-block;
   height: 35px;
   width: 20px;

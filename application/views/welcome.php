@@ -35,8 +35,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <img src="static/images/rich.png"/>
                 </a>
             </div>
+            <!--
+            箭头
             <a href="#about" class="a-down asg-tx animate-bounce-down">
                 <i class="iconfont">&#xe62a;</i>
+            </a>-->
+            <!-- 鼠标 -->
+            <a href="#about" class="scroll-down">
+                <span></span>
             </a>
         </div>
     </div>
@@ -56,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <ul id="main-menu">
                             <li><a href="#home">首页</a></li>
                             <li><a href="#about">关于</a></li>
-                            <li><a href="#resume">简历</a></li>
+                            <li><a href="#resume">摘录</a></li>
                             <li><a href="#service">Service</a></li>
                             <li><a href="#work">工作</a></li>
                             <li><a href="#blog">博客</a></li>
@@ -74,25 +80,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     -->
     <div id="about" class="page-about">
         <div class="about-title">
-            <h1>我们都是玖零后</h1>
+            <h1>玖零后</h1>
         </div>
         <section class="about-area">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="static/images/team5.jpg" alt="profile picture">
+                        <img src="static/images/cxy.png" class="img-user">
                     </div>
                     <div class="col-md-6">
                         <div class="section-title inner">
                             <h2>About Me</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quas error modi
-                                quaerat sequi, debitis!
+                                一人一事一青春
                             </p>
                         </div>
                         <ul>
                             <li>
-                                <strong>Full Name :</strong> zsi
+                                <strong>Name :</strong> <span>白天不懂夜的嗨</span>
                             </li>
                             <li>
                                 <strong>Age :</strong> 18
@@ -104,7 +109,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <strong>Email :</strong> 917661718@qq.com
                             </li>
                             <li>
-                                <strong>Phone :</strong> +185 xxxx 3183
+                                <strong>Phone :</strong> 185 xxxx 3183
                             </li>
                             <li>
                                 <strong>Job :</strong> Freelancer
@@ -124,8 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="section-title main">
                         <h2>My Skill</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quas error modi
-                            quaerat sequi, debitis!
+                            生命不息,学习不止
                         </p>
                     </div>
                 </div>
@@ -133,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row text-center">
                 <div class="col-md-3 col-sm-6">
                     <div id="circle-1"></div>
-                    <h4 class="text-uppercase">PHYTHON</h4>
+                    <h4 class="text-uppercase">PYTHON</h4>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div id="circle-2"></div>
@@ -157,10 +161,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <div class="section-title main">
-                        <h2>Education &amp; Experience</h2>
+                        <h2>摘录 &amp; 感想</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quas error modi
-                            quaerat sequi, debitis!
+                            社会人
                         </p>
                     </div>
                 </div>
@@ -169,27 +172,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-6 col-sm-12">
                     <div class="education-details">
                         <div class="icon">
-                            <i class="fa fa-briefcase"></i>
+                            <i class="iconfont">&#xe6a2;</i>
                         </div>
                         <div class="single-education-list">
-                            <h4>MERIN LAND COLLEGE</h4>
-                            <span class="duration">2012 - 2014</span>
+                            <h4>未来</h4>
+                            <span class="duration"></span>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, consectetur.
+                                如果一个人不知道他要驶向哪个码头，那么任何风都不会是顺风
                             </p>
                         </div>
                         <div class="single-education-list">
-                            <h4>MERIN LAND COLLEGE</h4>
-                            <span class="duration">2012 - 2014</span>
+                            <h4>现在</h4>
+                            <span class="duration"></span>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, consectetur.
+                                没有什么正确的选择，努力使当初的选择变的正确
                             </p>
                         </div>
                         <div class="single-education-list">
-                            <h4>MERIN LAND COLLEGE</h4>
-                            <span class="duration">2012 - 2014</span>
+                            <h4>过去</h4>
+                            <span class="duration"></span>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, consectetur.
+                                忆往昔峥嵘岁月稠
                             </p>
                         </div>
                     </div>
@@ -197,36 +200,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-6 col-sm-12">
                     <div class="working-details">
                         <div class="icon">
-                            <i class="fa fa-book"></i>
+                            <i class="iconfont">&#xe64f;</i>
                         </div>
                         <div class="single-education-list">
-                            <h4>MERIN LAND COLLEGE</h4>
-                            <span class="duration">2012 - 2014</span>
+                            <h4>亲情</h4>
+                            <span class="duration"></span>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, consectetur.
+                                舐犊情深
                             </p>
                         </div>
                         <div class="single-education-list">
-                            <h4>MERIN LAND COLLEGE</h4>
-                            <span class="duration">2012 - 2014</span>
+                            <h4>爱情</h4>
+                            <span class="duration"></span>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, consectetur.
+                                相濡以沫
                             </p>
                         </div>
                         <div class="single-education-list">
-                            <h4>MERIN LAND COLLEGE</h4>
-                            <span class="duration">2012 - 2014</span>
+                            <h4>友情</h4>
+                            <span class="duration"></span>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, consectetur.
+                                莫逆之交
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 text-center">
+                <!--<div class="col-md-12 text-center">
                     <a href="#" class="boxed-btn">
                         Download Resome
                     </a>
-                </div>
+                </div>-->
             </div>
         </div>
     </section>
@@ -668,8 +671,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="section-title main">
                         <h2>My Blog</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quas error modi
-                            quaerat sequi, debitis!
+                            有所作为是生活的最高境界
                         </p>
                     </div>
                 </div>
@@ -874,13 +876,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="copyright-text">
                         <p>
                             Copyright &copy; 2018.Company name All rights reserved.More Templates
-                            <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">
-                                模板之家
-                            </a>
-                            - Collect from
-                            <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">
-                                网页模板
-                            </a>
                         </p>
                     </div>
                 </div>
@@ -893,7 +888,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="cssload-box-loading"></div>
     </div>
 </div>
-<span class="go-top"><i class="fa fa-angle-double-up"></i></span>
+<span class="go-top"><i class="iconfont">&#xe6bc;</i></span>
+<audio autoplay="true">
+    <source src="static/js/wz.mp3" type="audio/mpeg" media="">
+</audio>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
