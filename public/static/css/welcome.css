@@ -59,6 +59,10 @@ img {
     height: auto;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 /*清除浮动*/
 
 .clearfloat {
@@ -75,6 +79,30 @@ img {
 
 .clearfix {
     clear: both;
+}
+
+/** 通用样式 **/
+.about-area span,
+.about-area .section-title p,
+.skill-section .section-title p,
+.blog-area .section-title p,
+.resome-area .row p,
+.team-area .section-title p,
+.counter-section p,
+.portfolio-area p,
+.service-section .section-title p{
+    font-family: xet;
+    font-size: 18px;
+}
+
+.education-details .icon i.iconfont, .working-details .icon i.iconfont {
+    transform: rotate(-135deg);
+    -ms-transform:rotate(-135deg); 	/* IE 9 */
+    -moz-transform:rotate(-135deg); 	/* Firefox */
+    -webkit-transform:rotate(-135deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-135deg); 	/* Opera */
+    text-align: center;
+    line-height: 40px;
 }
 
 /** 欢迎  **/
@@ -151,6 +179,10 @@ a.a-down {
 }
 
 /** 关于 **/
+.img-user {
+    height: 400px;
+    width: 400px;
+}
 
 .page-about {
     position: relative;
@@ -175,29 +207,39 @@ a.a-down {
     background: #1C1F26;
 }
 
-
-
-
-.about-area span,
-.about-area .section-title p,
-.skill-section .section-title p,
-.blog-area .section-title p,
-.resome-area .section-title p {
-    font-family: xet;
-    font-size: 18px;
+/* 精选导读 */
+.service-section .single-service-box p{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+/* banner */
+.counter-section {
+    position: relative;
+    background-image: url(../images/banner-2.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
-.img-user {
-    height: 400px;
-    width: 400px;
+.counter-section:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
 }
 
-.education-details .icon i.iconfont, .working-details .icon i.iconfont {
-    transform: rotate(-135deg);
-    -ms-transform:rotate(-135deg); 	/* IE 9 */
-    -moz-transform:rotate(-135deg); 	/* Firefox */
-    -webkit-transform:rotate(-135deg); /* Safari 和 Chrome */
-    -o-transform:rotate(-135deg); 	/* Opera */
-    text-align: center;
-    line-height: 40px;
+.counter-section p{
+    display: block;
+    font-size: 22px;
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-shadow: 1px 1px 0px #CC0000;
 }
+

@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body onselectstart="return false;">
-<div class="asg-container">
+<div id="app" class="asg-container" v-cloak>
     <!--
     作者：917661718@qq.com
     时间：2019-05-28
@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li><a href="#home">首页</a></li>
                             <li><a href="#about">关于</a></li>
                             <li><a href="#resume">摘录</a></li>
-                            <li><a href="#service">Service</a></li>
+                            <li><a href="#service">导读</a></li>
                             <li><a href="#work">工作</a></li>
                             <li><a href="#blog">博客</a></li>
                             <li><a href="#contact">联系</a></li>
@@ -90,29 +90,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="col-md-6">
                         <div class="section-title inner">
-                            <h2>About Me</h2>
+                            <h2>博主信息</h2>
                             <p>
                                 一人一事一青春
                             </p>
                         </div>
                         <ul>
                             <li>
-                                <strong>Name :</strong> <span>白天不懂夜的嗨</span>
+                                <strong>Name :</strong> <span>{{userInfo.nickName}}</span>
                             </li>
                             <li>
-                                <strong>Age :</strong> 18
+                                <strong>Age :</strong> <span>年年{{userInfo.age}}，啊哈</span>
                             </li>
                             <li>
-                                <strong>Address :</strong> Hunan, ChangSha
+                                <strong>Address :</strong> <span>{{userInfo.address}}</span>
                             </li>
                             <li>
-                                <strong>Email :</strong> 917661718@qq.com
+                                <strong>Email :</strong> <span>{{userInfo.email}}</span>
                             </li>
                             <li>
-                                <strong>Phone :</strong> 185 xxxx 3183
+                                <strong>Phone :</strong> <span>{{userInfo.phone}}</span>
                             </li>
                             <li>
-                                <strong>Job :</strong> Freelancer
+                                <strong>Job :</strong> <span>{{userInfo.job}}</span>
                             </li>
                         </ul>
                     </div>
@@ -127,7 +127,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <div class="section-title main">
-                        <h2>My Skill</h2>
+                        <h2>技能加点</h2>
                         <p>
                             生命不息,学习不止
                         </p>
@@ -135,21 +135,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-3 col-sm-6">
-                    <div id="circle-1"></div>
-                    <h4 class="text-uppercase">PYTHON</h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div id="circle-2"></div>
-                    <h4 class="text-uppercase">PHP</h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div id="circle-3"></div>
-                    <h4 class="text-uppercase">HTML</h4>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div id="circle-4"></div>
-                    <h4 class="text-uppercase">JAVA</h4>
+                <div class="col-md-3 col-sm-6" v-for="(item, index) in skillList">
+                    <div :id="'circle-'+(index+1)"></div>
+                    <h4 class="text-uppercase">{{item}}</h4>
                 </div>
             </div>
         </div>
@@ -161,9 +149,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <div class="section-title main">
-                        <h2>摘录 &amp; 感想</h2>
+                        <h2>经典语录</h2>
                         <p>
-                            社会人
+                            人生如戏,戏如人生
                         </p>
                     </div>
                 </div>
@@ -174,26 +162,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="icon">
                             <i class="iconfont">&#xe6a2;</i>
                         </div>
-                        <div class="single-education-list">
-                            <h4>未来</h4>
+                        <div class="single-education-list" v-for="(item, index) in talkList" v-if="item.type === 1">
+                            <h4></h4>
                             <span class="duration"></span>
-                            <p>
-                                如果一个人不知道他要驶向哪个码头，那么任何风都不会是顺风
-                            </p>
-                        </div>
-                        <div class="single-education-list">
-                            <h4>现在</h4>
-                            <span class="duration"></span>
-                            <p>
-                                没有什么正确的选择，努力使当初的选择变的正确
-                            </p>
-                        </div>
-                        <div class="single-education-list">
-                            <h4>过去</h4>
-                            <span class="duration"></span>
-                            <p>
-                                忆往昔峥嵘岁月稠
-                            </p>
+                            <p v-html="item.content"></p>
                         </div>
                     </div>
                 </div>
@@ -202,26 +174,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="icon">
                             <i class="iconfont">&#xe64f;</i>
                         </div>
-                        <div class="single-education-list">
-                            <h4>亲情</h4>
+                        <div class="single-education-list" v-for="(item, index) in talkList" v-if="item.type === 2">
+                            <h4></h4>
                             <span class="duration"></span>
-                            <p>
-                                舐犊情深
-                            </p>
-                        </div>
-                        <div class="single-education-list">
-                            <h4>爱情</h4>
-                            <span class="duration"></span>
-                            <p>
-                                相濡以沫
-                            </p>
-                        </div>
-                        <div class="single-education-list">
-                            <h4>友情</h4>
-                            <span class="duration"></span>
-                            <p>
-                                莫逆之交
-                            </p>
+                            <p v-html="item.content"></p>
                         </div>
                     </div>
                 </div>
@@ -240,80 +196,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <div class="section-title main">
-                        <h2>My Daily Service</h2>
+                        <h2>精选导读</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quas error modi
-                            quaerat sequi, debitis!
+                            看一看，瞧一瞧
                         </p>
                     </div>
                 </div>
             </div>
             <div class="service-inner">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-4 col-sm-6" v-for="(item, index) in articleList">
                         <div class="single-service-box">
                             <div class="icon">
-                                <img src="static/images/service-1.png" alt="service icon">
+                                <img :src="item.cover">
                             </div>
-                            <h4>Design</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, nisi?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-service-box">
-                            <div class="icon">
-                                <img src="static/images/service-2.png" alt="service icon">
-                            </div>
-                            <h4>DEVELOPMENT</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, nisi?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-service-box">
-                            <div class="icon">
-                                <img src="static/images/service-3.png" alt="service icon">
-                            </div>
-                            <h4>BRANDING</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, nisi?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-service-box">
-                            <div class="icon">
-                                <img src="static/images/service-4.png" alt="service icon">
-                            </div>
-                            <h4>MARKETING</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, nisi?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-service-box">
-                            <div class="icon">
-                                <img src="static/images/service-5.png" alt="service icon">
-                            </div>
-                            <h4>SUPPORT</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, nisi?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-service-box">
-                            <div class="icon">
-                                <img src="static/images/service-6.png" alt="service icon">
-                            </div>
-                            <h4>CONSULTING</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, nisi?
-                            </p>
+                            <h4>{{item.title}}</h4>
+                            <p>{{item.desc}}</p>
                         </div>
                     </div>
                 </div>
@@ -327,141 +225,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <div class="section-title main">
-                        <h2>My Team Members</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quas error modi
-                            quaerat sequi, debitis!
-                        </p>
+                        <h2>团队</h2>
+                        <p>小分队，能开黑，能撸代码</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6" v-for="item in teamNumberList">
                     <div class="single-team-box">
                         <div class="team-member-thumb">
-                            <img src="static/images/team-1.png" alt=" team member picture">
+                            <img :src="item.avatar">
                         </div>
                         <div class="content">
-                            <h4>Jhon Doue</h4>
-                            <span class="prosition">Web Designer</span>
+                            <h4>{{item.name}}</h4>
+                            <span class="prosition">{{item.profession}}</span>
                             <ul class="social-links">
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-facebook"></i>
+                                        <i class="iconfont">&#xe78c;</i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-google-plus"></i>
+                                        <i class="iconfont">&#xe605;</i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-team-box">
-                        <div class="team-member-thumb">
-                            <img src="static/images/team-2.png" alt=" team member picture">
-                        </div>
-                        <div class="content">
-                            <h4>Jhon Doue</h4>
-                            <span class="prosition">Web Designer</span>
-                            <ul class="social-links">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-team-box">
-                        <div class="team-member-thumb">
-                            <img src="static/images/team-4.png" alt=" team member picture">
-                        </div>
-                        <div class="content">
-                            <h4>Jhon Doue</h4>
-                            <span class="prosition">Web Designer</span>
-                            <ul class="social-links">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-team-box">
-                        <div class="team-member-thumb">
-                            <img src="static/images/team-3.png" alt=" team member picture">
-                        </div>
-                        <div class="content">
-                            <h4>Jhon Doue</h4>
-                            <span class="prosition">Web Designer</span>
-                            <ul class="social-links">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>
+                                        <i class="iconfont">&#xe601;</i>
                                     </a>
                                 </li>
                             </ul>
@@ -476,65 +267,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- counter section start -->
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center text-uppercase">
-                    <ul>
-                        <li>
-                            <div class="single-counter-item">
-                                <div class="icon">
-                                    <img src="static/images/project.png" alt="project done image">
-                                </div>
-                                <span class="counter-number"> 2350 </span>
-                                <h4>Project Done</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single-counter-item">
-                                <div class="icon">
-                                    <img src="static/images/like.png" alt="like image">
-                                </div>
-                                <span class="counter-number"> 2350 </span>
-                                <h4>Happy Clients</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single-counter-item">
-                                <div class="icon">
-                                    <img src="static/images/coffe-cup.png" alt=" coffe cup">
-                                </div>
-                                <span class="counter-number"> 2350 </span>
-                                <h4>Cups Of Coffee</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="single-counter-item">
-                                <div class="icon">
-                                    <img src="static/images/photo-taken.png" alt="">
-                                </div>
-                                <span class="counter-number"> 2350 </span>
-                                <h4>Photos Taken</h4>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="col-md-6 text-center text-uppercase">
+                    <p class="stats-number" data-stop="43">66</p>
+                </div>
+                <div class="col-md-6 text-center text-uppercase">
+                    <p>喜欢游戏，钓鱼，旅游...撸起代码就会废寝忘食</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="tlinks">
-        Collect from
-        <a href="http://www.cssmoban.com/">
-            建站模板
-        </a>
-    </div><!-- counter section end -->
     <!--portfolio section start-->
     <section class="portfolio-area" id="work">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <div class="section-title main">
-                        <h2>Some Of My Work</h2>
+                        <h2>工作集</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quas error modi
-                            quaerat sequi, debitis!
+                            生活中的乐趣
                         </p>
                     </div>
                 </div>
@@ -560,14 +310,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="portolio-masonary">
                         <div class="single-porfolio-item grid-size design">
                             <div class="img-thumb">
-                                <img src="static/images/portfolio-1.jpg" alt=" portfolio image ">
+                                <img src="static/images/portfolio-1.jpg">
                                 <div class="hover">
-                                    <div class="icon">
-                                        <a href="static/images/portfolio-1.jpg" class="image-popup"
-                                           title="Portfolio image">
-                                            <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
                                     <div class="icon">
                                         <i class="fa fa-link" aria-hidden="true"></i>
                                     </div>
@@ -578,12 +322,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="img-thumb">
                                 <img src="static/images/portfolio-2.jpg" alt=" portfolio image ">
                                 <div class="hover">
-                                    <div class="icon">
-                                        <a href="static/images/portfolio-2.jpg" class="image-popup"
-                                           title="Portfolio image">
-                                            <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
                                     <div class="icon">
                                         <i class="fa fa-link" aria-hidden="true"></i>
                                     </div>
@@ -776,8 +514,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="section-title main">
                         <h2>Contact Me</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quas error modi
-                            quaerat sequi, debitis!
+                            有什么想说的，或者交流的等等都可以给我留言哦！
                         </p>
                     </div>
                 </div>
@@ -790,7 +527,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <h4>Email</h4>
                         <p>
-                            contact@mark.com
+                            917661718@qq.com
                         </p>
                     </div>
                     <div class="single-contact-box">
@@ -799,7 +536,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <h4>Location</h4>
                         <p>
-                            3481 Melrose Place, Los Angeles
+                            岳麓区
                         </p>
                     </div>
                     <div class="single-contact-box">
@@ -808,7 +545,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <h4>Phone</h4>
                         <p>
-                            + 000-111-222
+                            + 185-xxxx-3183
                         </p>
                     </div>
                 </div>
@@ -893,6 +630,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <source src="static/js/wz.mp3" type="audio/mpeg" media="">
 </audio>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
 <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
 <script src="https://cdn.bootcss.com/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -901,7 +639,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="https://cdn.bootcss.com/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="https://cdn.bootcss.com/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script src="https://cdn.bootcss.com/SlickNav/1.0.10/jquery.slicknav.min.js"></script>
-<script src="static/js/jquery.counterup.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://cdn.bootcss.com/wow/1.1.2/wow.min.js"></script>
 <script src="static/js/scrollspy.js" type="text/javascript" charset="utf-8"></script>
 <script src="static/js/welcome.js" type="text/javascript" charset="utf-8"></script>

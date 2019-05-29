@@ -433,11 +433,6 @@ a {
       -o-animation-direction: "";
       animation-direction: ""; }
 
-.header-bg {
-  background-image: url(../img/header-bg-1.jpg);
-  background-position: center;
-  background-size: cover; }
-
 .scroll-down {
   text-align: center;
   display: inline-block;
@@ -682,20 +677,19 @@ a {
 
 .service-inner .single-service-box {
   text-align: center;
-  padding: 20px;
   border: 1px solid #f1f1f1;
   margin-bottom: 30px;
   background: #fff;
   box-shadow: 0 13px 59px 0 rgba(132, 141, 178, 0.22);
-  padding-top: 27px;
+  padding: 27px 20px 20px;
   transition: .5s ease-in; }
   .service-inner .single-service-box p {
     margin-bottom: 0; }
   .service-inner .single-service-box .icon {
     font-size: 30px;
     display: inline-block;
-    width: 80px;
-    height: 80px;
+    /*width: 80px;*/
+    /*height: 80px;*/
     border-radius: 50%;
     line-height: 80px;
     color: #222;
