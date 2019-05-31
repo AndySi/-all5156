@@ -440,69 +440,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             vel accusamus!
                         </p>
                         <a href="#" class="boxed-btn">
-                            Read More
+                            查看更多
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-blog-post">
-                        <div class="post-thumb">
-                            <img src="static/images/blog-2.jpg" alt=" blog image">
-                        </div>
-                        <h4>STANdard POST WITH IMAGE</h4>
-                        <ul class="post-meta">
-                            <li>
-                                <i class="fa fa-clock-o"></i> 05 Jan 2018
-                            </li>
-                            <li>
-                                <i class="fa fa-user"></i> By
-                                <a href="#">
-                                    Admin
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa fa-comments"></i> 27
-                            </li>
-                        </ul>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, excepturi modi eius a
-                            vel accusamus!
-                        </p>
-                        <a href="#" class="boxed-btn">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-blog-post">
-                        <div class="post-thumb">
-                            <img src="static/images/blog-3.jpg" alt=" blog image">
-                        </div>
-                        <h4>STANdard POST WITH IMAGE</h4>
-                        <ul class="post-meta">
-                            <li>
-                                <i class="fa fa-clock-o"></i> 05 Jan 2018
-                            </li>
-                            <li>
-                                <i class="fa fa-user"></i> By
-                                <a href="#">
-                                    Admin
-                                </a>
-                            </li>
-                            <li>
-                                <i class="fa fa-comments"></i> 27
-                            </li>
-                        </ul>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, excepturi modi eius a
-                            vel accusamus!
-                        </p>
-                        <a href="#" class="boxed-btn">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
     <!-- blog section end-->
@@ -581,38 +523,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <ul class="social-area">
                         <li>
                             <a href="#">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-dribbble"></i>
+
                             </a>
                         </li>
                     </ul>
                     <div class="copyright-text">
                         <p>
-                            Copyright &copy; 2018.Company name All rights reserved.More Templates
+                            Copyright &copy; 2019.Company all5156
                         </p>
                     </div>
                 </div>
